@@ -1,5 +1,4 @@
 import Foundation
-import Darwin
 
 //Shape 1
 public class Square {
