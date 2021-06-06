@@ -21,7 +21,7 @@ public class Circle {
 //3
 public class AreaSumCalculator {
     
-    var shapes: [Any] = []
+    private var shapes: [Any] = []
     
     public init(shapes:[Any]) {
         self.shapes = shapes
@@ -41,10 +41,34 @@ public class AreaSumCalculator {
         return area
     }
     
-    //Putting this output() will violets single responsibilty principle, as the responsibilty of this class is to calculate and return sum of the areas of the shapes, it doesn't have to do anything with output - whether to convert it into json or simple print.
+    /*
+    Putting this output() will violets single responsibilty principle, as the responsibilty of this class is to calculate and return sum of the areas of the shapes, it doesn't have to do anything with output - whether to convert it into json or simple print.
+     
     public func output() {
         let total = sum()
         print("Sum of the areas of provided shapes: \(total)")
     }
+     
+    Solution: To create separate class for handling output operations SumCalculatorOutputter.
+    */
+}
+
+public class SumCalculatorOutputter
+{
+    private var calculator: AreaSumCalculator!
     
+    public init(calculator: AreaSumCalculator) {
+        self.calculator = calculator
+    }
+    
+    public func toJSON() -> [String: Any] {
+        let total = self.calculator.sum()
+        let json = [ "data" : total ]
+        return json
+    }
+    
+    public func printOutput() {
+        let total = self.calculator.sum()
+        print("Sum of the areas of provided shapes: \(total)")
+    }
 }

@@ -7,8 +7,9 @@ let c1 = Circle.init(radius: 7)
 
 /* Single Responsibility */
 let calculator = AreaSumCalculator.init(shapes: [sq1, sq2, c1])
-let total = calculator.sum()
-calculator.output() //Violet single responsibilty principle
+let outputter = SumCalculatorOutputter.init(calculator: calculator)
+outputter.toJSON()
+outputter.printOutput()
 
 
 /* Open-Closed */
