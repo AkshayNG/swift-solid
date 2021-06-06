@@ -54,7 +54,7 @@ public class ShapeSumCalculator {
     */
 }
 
-public class ShapeSumCalculatorOutputter
+public class ShapeCalculatorOutputter
 {
     private var calculator: ShapeSumCalculator!
     

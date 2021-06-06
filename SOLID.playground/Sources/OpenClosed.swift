@@ -3,35 +3,37 @@ import Foundation
 //A class should be extendable without modifying the class itself.
 //Coding to an interface is an integral part of SOLID.
 
-public protocol Shape {
+public protocol TwoDimensionalShape {
     func area() -> Double
-    func volume() -> Double
+    //func volume() -> Double
 }
 
-extension Square: Shape {
+extension Square: TwoDimensionalShape {
     public func area() -> Double {
         return pow(length, 2)
     }
     
-    public func volume() -> Double {
-        return pow(length, 3)
-    }
+    /* Violation of interface segregation as Square don't have volume*/
+//    public func volume() -> Double {
+//        return 0
+//    }
 }
 
-extension Circle: Shape {
+extension Circle: TwoDimensionalShape {
     public func area() -> Double {
         return Double.pi * (pow(radius, 2))
     }
     
-    public func volume() -> Double {
-        return 4/3 * Double.pi * (pow(radius, 3))
-    }
+    /* Violation of interface segregation as Circle don't have volume*/
+//    public func volume() -> Double {
+//        return 0
+//    }
 }
 
 public class AreaSumCalculator {
-    var shapes: [Shape] = []
+    var shapes: [TwoDimensionalShape] = []
     
-    public init(shapes:[Shape]) {
+    public init(shapes:[TwoDimensionalShape]) {
         self.shapes = shapes
     }
     
@@ -60,7 +62,7 @@ public class AreaSumCalculator {
 }
 
 
-public class AreaSumCalculatorOutputter
+public class AreaCalculatorOutputter
 {
     private var calculator: AreaSumCalculator!
     
