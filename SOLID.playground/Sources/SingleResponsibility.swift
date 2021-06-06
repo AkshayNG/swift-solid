@@ -20,7 +20,7 @@ public class Circle {
 
 //A class should have one and only one reason to change, meaning that a class should have only one job.
 
-public class AreaSumCalculator {
+public class ShapeSumCalculator {
     
     private var shapes: [Any] = []
     
@@ -54,11 +54,11 @@ public class AreaSumCalculator {
     */
 }
 
-public class AreaSumCalculatorOutputter
+public class ShapeSumCalculatorOutputter
 {
-    private var calculator: AreaSumCalculator!
+    private var calculator: ShapeSumCalculator!
     
-    public init(calculator: AreaSumCalculator) {
+    public init(calculator: ShapeSumCalculator) {
         self.calculator = calculator
     }
     

@@ -28,7 +28,7 @@ extension Circle: Shape {
     }
 }
 
-public class ShapeSumCalculator {
+public class AreaSumCalculator {
     var shapes: [Shape] = []
     
     public init(shapes:[Shape]) {
@@ -60,11 +60,11 @@ public class ShapeSumCalculator {
 }
 
 
-public class ShapeSumCalculatorOutputter
+public class AreaSumCalculatorOutputter
 {
-    private var calculator: ShapeSumCalculator!
+    private var calculator: AreaSumCalculator!
     
-    public init(calculator: ShapeSumCalculator) {
+    public init(calculator: AreaSumCalculator) {
         self.calculator = calculator
     }
     
