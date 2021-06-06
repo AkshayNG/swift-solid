@@ -1,19 +1,30 @@
 import Foundation
 
+//A class should be extendable without modifying the class itself.
 //Coding to an interface is an integral part of SOLID.
+
 public protocol Shape {
     func area() -> Double
+    func volume() -> Double
 }
 
 extension Square: Shape {
     public func area() -> Double {
         return pow(length, 2)
     }
+    
+    public func volume() -> Double {
+        return pow(length, 3)
+    }
 }
 
 extension Circle: Shape {
     public func area() -> Double {
         return Double.pi * (pow(radius, 2))
+    }
+    
+    public func volume() -> Double {
+        return 4/3 * Double.pi * (pow(radius, 3))
     }
 }
 
@@ -48,6 +59,26 @@ public class ShapeSumCalculator {
     }
 }
 
+
+public class ShapeSumCalculatorOutputter
+{
+    private var calculator: ShapeSumCalculator!
+    
+    public init(calculator: ShapeSumCalculator) {
+        self.calculator = calculator
+    }
+    
+    public func toJSON() -> [String: Any] {
+        let total = self.calculator.sum()
+        let json = [ "data" : total ]
+        return json
+    }
+    
+    public func printOutput() {
+        let total = self.calculator.sum()
+        print("Sum for provided shapes: \(total)")
+    }
+}
 
 
 

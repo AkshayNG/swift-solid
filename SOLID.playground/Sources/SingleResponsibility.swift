@@ -18,7 +18,8 @@ public class Circle {
     }
 }
 
-//3
+//A class should have one and only one reason to change, meaning that a class should have only one job.
+
 public class AreaSumCalculator {
     
     private var shapes: [Any] = []
@@ -53,7 +54,7 @@ public class AreaSumCalculator {
     */
 }
 
-public class SumCalculatorOutputter
+public class AreaSumCalculatorOutputter
 {
     private var calculator: AreaSumCalculator!
     
