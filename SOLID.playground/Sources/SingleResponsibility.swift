@@ -1,5 +1,8 @@
 import Foundation
 
+//Single Responsibility
+//A class should have one and only one reason to change, meaning that a class should have only one job.
+
 //Shape 1
 public class Square {
     var length: Double!
@@ -18,7 +21,6 @@ public class Circle {
     }
 }
 
-//A class should have one and only one reason to change, meaning that a class should have only one job.
 
 public class ShapeSumCalculator {
     

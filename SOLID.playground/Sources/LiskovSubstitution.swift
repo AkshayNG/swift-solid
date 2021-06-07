@@ -1,5 +1,6 @@
 import Foundation
 
+//Liskov Substitution
 //Every subclass or derived class should be substitutable for their base or parent class.
 
 public class AreaDiffCalculator: AreaSumCalculator {

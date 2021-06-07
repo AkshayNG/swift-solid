@@ -1,8 +1,10 @@
 import Foundation
 
+//Open-Closed
+//Objects or entities should be open for extension but closed for modification.
 //A class should be extendable without modifying the class itself.
-//Coding to an interface is an integral part of SOLID.
 
+//Coding to an interface is an integral part of SOLID.
 public protocol TwoDimensionalShape {
     func area() -> Double
     //func volume() -> Double
@@ -13,7 +15,7 @@ extension Square: TwoDimensionalShape {
         return pow(length, 2)
     }
     
-    /* Violation of interface segregation as Square don't have volume*/
+    /* Violation of interface segregation as Square don't have volume, still its forced to use it*/
 //    public func volume() -> Double {
 //        return 0
 //    }
@@ -24,7 +26,7 @@ extension Circle: TwoDimensionalShape {
         return Double.pi * (pow(radius, 2))
     }
     
-    /* Violation of interface segregation as Circle don't have volume*/
+    /* Violation of interface segregation as Circle don't have volume, still its forced to use it*/
 //    public func volume() -> Double {
 //        return 0
 //    }
