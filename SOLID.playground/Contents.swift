@@ -31,3 +31,9 @@ let cuboid1 = Cuboid.init(length: 1, width: 2, height: 3)
 let cuboid2 = Cuboid.init(length: 4, width: 5, height: 6)
 let calculator4 = VolumeSumCalculator.init(shapes: [cuboid1, cuboid2])
 let totalVolume = calculator4.sum()
+
+/* Dependency Inversion */
+let app1 = MyApplication.init(databaseConnection: RemoteDatabaseConnection())
+app1.establishConnection()
+let app2 = MyApplication.init(databaseConnection: LocalDatabaseConnection())
+app2.establishConnection()
